@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-color: black;
+    overflow: hidden;
+}
+
+h2 {
+    border: 1px solid white transparent;
+    height: 30px;
+    width: 1598px;
+    font-family: "Brush Script MT", cursive;
+    text-align: center;
+    text-shadow: 2px 2px #ff0000;
+    color: aqua;
+    justify-content: center;
+    font-size: 80px;
+    animation: 8s blink linear infinite;
+}
+
+@keyframes blink {
+    0% {
+        color: white;
+    }
+
+    20% {
+        color: yellow;
+    }
+
+    40% {
+        color: greenyellow;
+    }
+
+    60% {
+        color: blue;
+    }
+
+    80% {
+        color: hotpink;
+    }
+
+    100% {
+        color: red;
+    }
+}
+
+.block {
+    padding: 1px;
+    position: relative;
+    height: 400px;
+    width: 50%;
+    margin: 10% auto 0;
+    background-image: linear-gradient(0deg, rgb(14, 10, 10), rgb(14, 14, 24));
+}
+
+.glow::before,
+.glow::after {
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background-image: linear-gradient(45deg, violet, indigo, blue, rgba(0, 128, 0, 0.685), rgba(255, 255, 0, 0.508), rgba(255, 166, 0, 0.562), rgba(255, 0, 0, 0.45));
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: animate 30s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.glow::after {
+    filter: blur(40px);
+    opacity: 0.7;
+}
+
+.content {
+    text-align: center;
+    color: white;
+    margin-top: 70px;
+}
+
+.content h1 {
+    color: rgba(255, 55, 0, 0.812);
+    font-family: Papyrus;
+    font-weight: bolder;
+    font-size: 50px;
+}
+
+.balloons {
+    margin-left: 8px;
+    margin-top: 81px;
+    position: absolute;
+}
+
+.balloon1,
+.balloon2 {
+    position: absolute;
+    width: 85px;
+    height: 95px;
+    border-radius: 50%;
+}
+
+.balloon1 {
+    background-color: rgb(239, 71, 111, 0.7);
+    left: -10px;
+    top: 50px;
+}
+
+.balloon2 {
+    background-color: rgb(6, 214, 160, 0.7);
+    left: 50px;
+    top: 20px;
+}
+
+.balloon1:before,
+.balloon2:before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 155px;
+    background-color: #ffd166;
+    top: 95px;
+    left: 43px;
+}
+
+.balloon1:after,
+.balloon2:after {
+    content: "";
+    position: absolute;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    top: 94px;
+    left: 37px;
+}
+
+.balloon1:after {
+    border-bottom: 10px solid #ef476f;
+}
+
+.balloon2:after {
+    border-bottom: 10px solid #06d6a0;
+}
+
+.fireworks,
+.fireworks2,
+.fireworks3,
+.fireworks4,
+.fireworks5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation-delay: 0.3s;
+    background-image: 
+    radial-gradient(rgba(255, 0, 0, 0.525), black),
+    radial-gradient(yellow, black), 
+    radial-gradient(violet, black), 
+    radial-gradient(blue, black), 
+    radial-gradient(orange, black), 
+    radial-gradient(aqua, black), 
+    radial-gradient(purple, black), 
+    radial-gradient(white, black), 
+    radial-gradient(indigo, black),
+    radial-gradient(yellowgreen, black), 
+    radial-gradient(lime, black), 
+    radial-gradient(green, black), 
+    radial-gradient(grey, black);
+    background-position: 95% 30%,0% 90%,100% 10%,50% 50%,30% 30%,0% 50%,50% 10%,0% 25%,34% 45%,56% 42%,15% 25%,5% 40%,75% 85%;
+    width: 10px;
+    height: 10px;
+    transform: translate(-50%, -50%);
+    background-size: 10px 10px;
+    background-repeat: no-repeat;
+    animation: firework 3s infinite;
+}
+.fireworks2{
+    top:25%;
+    left: 30%;
+    animation-delay: 0.5s;
+}
+.fireworks3{
+    top:80%;
+    left: 70%;
+    animation-delay: 0.6s;
+}
+.fireworks4{
+    top:25%;
+    left: 70%;
+    animation-delay: 0.6s;
+}
+.fireworks5{
+    top:80%;
+    left: 30%;
+    animation-delay: 0.5s;
+}
+@keyframes firework{
+    0%{
+        transform: translate(100vh);
+        opacity: 0.3;
+    }
+    50%{
+        width: 10px;
+        height: 10px;
+        opacity: 0.4;
+    }
+    75%{
+        width: 10px;
+        height: 10px;
+        opacity: 0.2;
+    }
+    100%{
+        width: 250px;
+        height: 250px;
+        opacity: 0.75;
+    }
+}
